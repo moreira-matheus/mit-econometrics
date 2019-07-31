@@ -49,3 +49,5 @@ $$
        - No correlation between observed values and errors, *i. e.*, $E(x_i \cdot u) = 0,\ \forall x_i$ ;
        - The number of observations is at least the same as that of variables ($N \geq k$) ;
        - There must be (as much as possible) variability in $x$'s (otherwise, variance would be infinite).
+       - Regression specified correctly;
+       - No <u>perfect</u> multicollinearity ($x_i = c \cdot x_j$).
