@@ -57,7 +57,7 @@
 ###### Testing for heteroskedasticity
 
 - Only suggestive, but helpful:
-  - Graph $\hat e_i^2$ against the variable suspected of causing the problem;
+  - Graph $\hat u_i^2$ against the variable suspected of causing the problem;
   - If there is no heteroskedasticity, the graph will be fairly constant;
   - Otherwise, the graph will be somehow sloped.
 
