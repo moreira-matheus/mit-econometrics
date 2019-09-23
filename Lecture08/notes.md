@@ -140,6 +140,7 @@ $$
   - This violates one of the Gauss-Markov assumptions (see Lecture 01).
   - Then, OLS should not be used to estimate the parameters.
     - Non-linear Least Squares (NLLS) should be used instead to estimate $\hat\rho$, $\hat\beta_1$ e $\hat\beta_2$.
+    - For more on NLLS, see [this](https://stackoverflow.com/questions/7165201/python-nonlinear-least-squares-fitting) and [this](https://lmfit.github.io/lmfit-py/intro.html) link.
 - Were $\rho$ known, the problem could be solved transforming the variables:
   - The model $(y_t - \rho y_{t-1}) = \beta_1 (1-\rho) + \beta_2 (x_{2t}  -\rho x_{2, t-1}) + e_t$ could be rewritten as $y_t^{*} = \beta_1 (1 - \rho) + \beta_2 x_{2t}^* + e_t$.
     - $\beta_1 (1-\rho)$ can also be rewritten as $\beta_1^*$.
