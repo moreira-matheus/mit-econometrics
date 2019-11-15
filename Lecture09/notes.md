@@ -50,7 +50,7 @@ $$
 - One can think of the $\sigma^2$ in $(1)$ as an $\alpha$ : it is simply another parameter to estimate.
 - $(1)$ is a special case of $(3)$.
 
-Generally, solving heteroskedasticity involves dividing the original model by the standard deviation $\sigma^2_i$.
+Generally, solving heteroskedasticity involves dividing the original model by the standard deviation $\sigma_i$.
 
 - Originally, $\textrm{Var}(u_i) = \sigma^2_i$ : this is the source of the problem.
 - Once the model is divided by $\sigma_i$, then $\textrm{Var}\bigg(\displaystyle\frac{u_i}{\sigma_i}\bigg) = \frac{1}{\sigma^2_i} \textrm{Var}(u_i) = \frac{\sigma^2_i}{\sigma^2_i} = 1$.
