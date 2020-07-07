@@ -112,7 +112,7 @@ Then, choose $\boldsymbol\theta$ such that $\displaystyle\frac{\partial \ln\math
 2. Asymptotically efficient, that is, for large $n$, no other consistent estimator has a smaller variance.
 3. The estimates are asymptotically normal (true even if underlying distribution of $X$ is non-normal).
 
-*Example*:
+*Example 1*:
 
 Assume $X \sim \mathcal N (\mu, \sigma^2)$ and a sample $x_1, x_2, ..., x_n$.
 
@@ -124,3 +124,43 @@ The likelihood function:
 $$
 \mathcal L(\hat\mu,\hat\sigma^2 | x) = \prod_{i=1}^n \Bigg[\frac{1}{\sigma \sqrt{2\pi}}\ \exp \bigg\{-\frac{(x_i-\mu)}{2\sigma^2}\bigg\} \Bigg]
 $$
+The log-likelihood function:
+$$
+\ln \mathcal L(\hat\mu,\hat\sigma^2|x) = -n \ln \hat\sigma - \frac{n}{2} \ln 2\pi - \frac{1}{2\hat\sigma^2} \sum_{i=1}^n \big( x_i-\hat\mu \big)^2
+$$
+Taking the derivative for $\hat\mu$:
+$$
+\begin{align}
+\frac{\partial \ln \mathcal L}{\partial \hat\mu} & = -\frac{2}{2\hat\sigma^2} \sum_{i=1}^n (x_i-\hat\mu)(-\hat\mu) := 0\\
+& = \sum_{i=1}^n (x_i - \hat\mu) := 0 \\
+& \therefore \sum x_i = n \hat\mu \quad\Rightarrow\quad \hat\mu = \frac{1}{n}\sum x_i
+\end{align}
+$$
+Taking the derivative for $\hat\sigma$:
+$$
+\begin{align}
+\frac{\partial \ln \mathcal L}{\partial \hat\sigma} & = -\frac{n}{\hat\sigma} - \bigg(-\frac{4\hat\sigma}{4\hat\sigma^4}\bigg) \sum(x_i - \mu)^2 := 0 \\
+& = -\frac{n}{\hat\sigma} + \frac{1}{\hat\sigma^3} \sum(x_i - \mu)^2 := 0 \\
+& \therefore\ \frac{1}{\sigma^2} \sum(x_i - \mu)^2 = N \quad\Rightarrow\quad \hat\sigma^2 = \frac{1}{n} \sum (x_i - \mu)^2 
+\end{align}
+$$
+For an estimated mean (and [unbiased estimator of the variance](https://en.wikipedia.org/wiki/Unbiased_estimation_of_standard_deviation)): $\hat\sigma^2 = \displaystyle\frac{1}{n-1}\sum (x_i - \bar x)$.
+
+*Example 2*:
+
+Suppose:
+$$
+y_i = x_i \beta + u_i
+$$
+Assuming $u_i \sim \mathcal N (0, \sigma^2)$, then:
+$$
+\begin{align}
+\mathcal L (\hat\beta, \sigma|x) & = \prod_{i=1}^n \frac{1}{\sigma\sqrt{2\pi}} \exp\bigg\{-\frac{\hat u_i^2}{2\sigma^2}\bigg\} \\
+& = \prod_{i=1}^n \frac{1}{\sigma\sqrt{2\pi}} \exp\bigg\{-\frac{(y_i - x_i \beta)^2}{2\sigma^2}\bigg\}
+\end{align}
+$$
+Taking the $\text{log}$:
+$$
+\ln \mathcal L (\hat\beta, \sigma|x) = -n\ln \sigma - \frac{n}{2}\ln 2\pi - \frac{1}{2\sigma^2}\sum(y_i-x_i\beta)^2
+$$
+Thus, $\max\ \underset{\hat\beta}{\ln \mathcal L}$ is equivalent to $\min\ \underset{\hat\beta}{\text{SSE}} = \sum (y_i - x_i\beta)^2$.
